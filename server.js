@@ -8,7 +8,7 @@
 var fs = require('fs');
 var express = require('express');
 var app = express();
-
+/*
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function(req, res, next) {
     var allowedOrigins = ['https://narrow-plane.gomix.me', 'https://www.freecodecamp.com'];
@@ -21,7 +21,7 @@ if (!process.env.DISABLE_XORIGIN) {
     next();
   });
 }
-
+*/
 app.use('/public', express.static(process.cwd() + '/public'));
 
 app.route('/_api/package.json')
@@ -32,6 +32,10 @@ app.route('/_api/package.json')
       res.type('txt').send(data.toString());
     });
   });
+
+app.get('/unix', function(req, res) {
+  res.type('txt').send('Not fofffffund');
+});
   
 app.route('/')
     .get(function(req, res) {
