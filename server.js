@@ -33,8 +33,15 @@ app.route('/_api/package.json')
     });
   });
 
-app.get('/unix', function(req, res) {
-  res.type('txt').send('Not fofffffund');
+app.get('/:time', function(req, res) {
+  console.log(String(req.params.time));
+  var date = new Date(parseInt(req.params.time));
+  console.log(typeof(date.getDate()));
+  
+  if (isNaN(date.getDate()))
+    res.type('txt').status(200).send("bad");
+  else
+    res.type('txt').status(200).send(String(date.getDate()));
 });
   
 app.route('/')
