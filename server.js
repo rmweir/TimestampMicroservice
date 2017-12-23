@@ -23,8 +23,8 @@ if (!process.env.DISABLE_XORIGIN) {
 */
 function toMonth(digit) {
   var months = ["January", "February", "March", "April",
-                "May", "June", "July", "August", "October",
-                "November", "December"];
+                "May", "June", "July", "August", "September",
+                "October", "November", "December"];
   return months[digit];
   
 }
